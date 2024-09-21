@@ -9,9 +9,9 @@ export default function Card({ flag, name, population, region }) {
         <img src={flag}
              alt={`flag of ${name}`}
              className='country-flag' />
-        <p style={{color:getRegionColor(region)}}>{name}</p>
+        <h4 style={{color:getRegionColor(region)}}>{name}</h4>
       </div>
-      <p className="card-footer">Has a population of {population}</p>
+      <p className="card-footer">Has a population of {population} people</p>
     </div>
   );
 }

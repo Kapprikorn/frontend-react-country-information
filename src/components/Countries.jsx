@@ -1,6 +1,7 @@
 import Card from './Card.jsx';
 import { countryService } from '../services/countryService.js';
 import { useState } from 'react';
+import './Countries.css';
 
 export default function Countries() {
   let [countries, setCountries] = useState([]);
@@ -22,7 +23,8 @@ export default function Countries() {
         ),
       );
     } catch (e) {
-      console.error(e);
+      // error is already logged in the service.
+      // TODO: create an error visual on screen for the user.
     }
   }
 
@@ -31,13 +33,18 @@ export default function Countries() {
       {
         (countries.length > 0)
         ? (
-          countries.map(country => {
-            return <Card key={`${country.index}_${country.name}`}
-                         name={country.name}
-                         flag={country.flag}
-                         population={country.population}
-                         region={country.region} />;
-          })
+          <div className="countries-wrapper">
+            {
+              countries.sort((a,b) => a.population - b.population).map(country => {
+                return (<Card key={`${country.index}_${country.name}`}
+                              name={country.name}
+                              flag={country.flag}
+                              population={country.population}
+                              region={country.region} />);
+                }
+              )
+            }
+          </div>
         )
         : (
           <button onClick={() => getCountries()}>

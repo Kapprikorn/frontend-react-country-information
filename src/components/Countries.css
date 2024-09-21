@@ -1,0 +1,22 @@
+.countries-wrapper {
+  height: calc(250 / 3 * 80px);
+
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  /*border: 1px solid rgba(0,0,0, 0.1);*/
+  border-radius: 8px;
+  padding: 16px 4px;
+  background: rgba(0,0,0, 0.05);
+  box-shadow: rgba(0, 0, 0, 0.2) 0 8px 24px,
+              rgba(0, 0, 0, 0.2) 0 4px 24px;
+}
+
+@media screen and (max-width: 900px) {
+  .countries-wrapper {
+    height: calc(250 / 3 * 120px);
+  }
+}
