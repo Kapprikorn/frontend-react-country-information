@@ -1,0 +1,16 @@
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.country-flag {
+  height: 30px;
+  width: 50px;
+}
