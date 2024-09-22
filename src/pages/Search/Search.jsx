@@ -19,7 +19,7 @@ export default function Search() {
       setCountryInfo(response[0]);
       setSearchInput('');
     } catch (e) {
-      setError(e.message);
+      setError(`${searchInput} bestaat niet. Probeer het opnieuw.`);
     }
     finally {
       setIsloading(false);
@@ -47,7 +47,7 @@ export default function Search() {
             <button onClick={() => getCountryInfo()}>ZOEK</button>
           </div>
       }
-      {error && <p>Error: {error}</p>}
+      {error && <p>{error}</p>}
       {
         Object.keys(countryInfo).length !== 0 &&
         <div className="search-output-wrapper">
