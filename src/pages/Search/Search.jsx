@@ -15,7 +15,6 @@ export default function Search() {
     setError('');
     try {
       const response = await countryService.getCountry(searchInput);
-      console.log(response[0]);
       setCountryInfo(response[0]);
       setSearchInput('');
     } catch (e) {
