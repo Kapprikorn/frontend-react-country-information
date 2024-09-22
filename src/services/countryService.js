@@ -10,9 +10,22 @@ export const countryService = {
     }
     catch(error) {
       console.error(error);
+      throw new Error(error.message);
     }
   },
 
+  getCountry: async function(name) {
+    try {
+      const result = await axios.get(
+        `https://restcountries.com/v3.1/name/${name}`,
+      );
+      return result.data;
+    }
+    catch (error) {
+      console.error(error);
+      throw new Error(error.message);
+    }
+  }
 }
 
 

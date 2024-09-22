@@ -1,8 +1,9 @@
 import './App.css';
 
 import worldMap from './assets/world_map.png';
-import Countries from './components/Countries.jsx';
+import Countries from './pages/Countries/Countries.jsx';
 import { useState } from 'react';
+import Search from './pages/Search/Search.jsx';
 
 function App() {
   let [applicationMode, setApplicationMode] = useState('regions');
@@ -31,23 +32,11 @@ function App() {
         (applicationMode === 'regions')
         ? (
           <>
-            <img src={worldMap}
-                 alt="world map" />
-            <h1>World Regions</h1>
             <Countries />
           </>
         )
         : (
-          <>
-            <img src='https://img.freepik.com/free-vector/spinning-globe-isolated-vector_1308-115407.jpg'
-                 alt='spinning globe' />
-            <h1>Search country information</h1>
-            <div className='search-bar'
-                 placeholder='Bijvoorbeeld Nederland of Peru'>
-              <input/>
-              <button>ZOEK</button>
-            </div>
-          </>
+          <Search />
         )
       }
     </>

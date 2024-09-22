@@ -1,5 +1,5 @@
 import './Card.css';
-import getRegionColor from '../helpers/getRegionColor.js';
+import getRegionColor from '../../helpers/getRegionColor.js';
 
 export default function Card({ flag, name, population, region }) {
 
