@@ -7,10 +7,10 @@ export default function Search() {
   const [searchInput, setSearchInput] = useState('');
   const [countryInfo, setCountryInfo] = useState({});
   const [error, setError] = useState('');
-  const [isLoading, setIsloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   async function getCountryInfo() {
-    setIsloading(true);
+    setIsLoading(true);
     setCountryInfo({});
     setError('');
     try {
@@ -21,7 +21,7 @@ export default function Search() {
       setError(`${searchInput} bestaat niet. Probeer het opnieuw.`);
     }
     finally {
-      setIsloading(false);
+      setIsLoading(false);
     }
   }
 
